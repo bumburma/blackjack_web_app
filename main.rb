@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 
-set :sessions, true
+use Rack::Session::Cookie, :key => 'rack.session',
+                           :path => '/',
+                           :secret => 'mighty-inlet-9753'
 
 BLACKJACK = 21
 DEALER_MIN = 17
